@@ -1,0 +1,6 @@
+Shy: '08/29/2023'
+    setup virtual env
+    installed django + mysqlclient
+    started project ie urbanestate n app estate_app
+    created media dir for storing data and templates dir
+    configure settings
