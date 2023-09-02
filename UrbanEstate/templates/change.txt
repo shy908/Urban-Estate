@@ -4,3 +4,9 @@ Shy: '08/29/2023'
     started project ie urbanestate n app estate_app
     created media dir for storing data and templates dir
     configure settings
+
+Shy: '9/2/23'
+    added signup, login , logout n upload func
+    added edit n del media func
+    created forms and models ie user n upload
+
