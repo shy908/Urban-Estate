@@ -94,7 +94,7 @@ def upload(request):
     # Retrieve media files from the database
     media_files = UploadMedia.objects.all().order_by('-id')
 
-    return render(request, 'upload.html.html', {'media_files': media_files})
+    return render(request, 'upload.html', {'media_files': media_files})
 
 def delete_media(request, media_id):
     media = get_object_or_404(UploadMedia, id=media_id)

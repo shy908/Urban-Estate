@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Archive | Upload{% endblock %}
+
+{% block content %}
+<div class="content">
+    <h1>Upload</h1>
+    <div class="inner-content">
+        <div class="archive-content">
+            <div class="archive-upload">
+                <h2>Upload</h2>
+                <div class="form-content">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <label for="title">Title<sup>*</sup></label>
+                            <input type="text" name="title" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="description">Description</label>
+                            <textarea name="description"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <label for="file">File</label>
+                            <input type="file" name="file">
+                        </div>
+                        <div class="form-row">
+                            <label for="filetype">File Type</label>
+                            <select name="filetype">
+                                <option value="">Please Select</option>
+                                <option value="video">Video</option>
+                                <option value="image">Image</option>
+                            </select>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="archive-media">
+                <h2>Uploaded Media</h2>
+                <ul>
+                    {% for media in media_files %}
+                        <li>
+                            <h4>{{ media.title }}</h4>
+                            {% if media.media_type == 'image' %}
+                                <img src="{{ media.file }}" alt="{{ media.title }}">
+                            {% elif media.media_type == 'video' %}
+                                <video src="{{ media.file }}" controls></video>
+                            {% elif media.media_type == 'audio' %}
+                                <audio src="{{ media.file }}" controls></audio>
+                            {% elif media.media_type == 'file' %}
+                                <a href="{{ media.file }}" download>{{ media.title }}</a>
+                            {% endif %}
+                            <div class="media-actions">
+                                <a href="{% url 'edit_media' media.id %}">Edit</a>
+                                <form method="POST" action="{% url 'delete_media' media.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -22,7 +22,7 @@ class UploadMedia(models.Model):
     created_time = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        db_table = 'myapp_uploadmedia'
+        db_table = 'estate_app_uploadmedia'
 
     def __str__(self):
         return self.title

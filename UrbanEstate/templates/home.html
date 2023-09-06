@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Estate</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Estate | Home{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <h1 class="page-title">Home</h1>
+    {% if user.is_authenticated %}
+    <p><span class="welcome-message">Welcome, <strong>{{ user.username }}</strong>!</span></p>  
+    {% endif %}     
+</div>
+{% endblock %}
