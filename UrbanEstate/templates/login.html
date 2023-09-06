@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Archive | Login {% endblock %}
+
+{% block content %}
+<div class="content">
+    <h1>Login</h1>
+    <div class="form-content">
+        {% if error %}
+            <div class="form-notification-error">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-required">
+                <small>Fields marked <sup>*</sup> are required</small>
+            </div>
+            <div class="form-row">
+                <label for="username">Username<sup>*</sup></label>
+                <input type="text" id="username" name="username" class="form-error">
+            </div>
+            <div class="form-row">
+                <label for="password">Password<sup>*</sup></label>
+                <input type="password" id="password" name="password" class="form-error">
+            </div>
+            <div class="form-submit">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

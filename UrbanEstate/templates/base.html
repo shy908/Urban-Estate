@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="top-section">
+        <header>
+            <div class="logo">
+                <strong>Urban Estate</strong>
+            </div>
+            <div class="burger-menu">
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}" title="Home">Home</a></li>
+                    <li><a href="{% url 'upload' %}" title="upload">Upload</a></li>
+                    {% if not user.is_authenticated %}
+                        <li><a href="{% url 'login' %}" title="Login">Login</a></li>
+                    {% else %}
+                        <li><a href="{% url 'logout' %}" title="Logout">Logout</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'signup' %}" title="Sign Up">Sign Up</a></li>
+                </ul>
+                
+            </nav>
+        </header>
+    </div>
+
+    <div class="mid-section">
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
