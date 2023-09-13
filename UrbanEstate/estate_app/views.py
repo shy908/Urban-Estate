@@ -121,14 +121,3 @@ def edit_media(request, media_id):
         form = UploadMediaForm(instance=media)
 
     return render(request, 'edit_media.html', {'form': form, 'media': media})
-
-def upload_image(request):
-    if request.method == 'POST':
-        form = MyImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('success_page')  # Replace 'success_page' with the URL name for your success page
-    else:
-        form = MyImageForm()
-    
-    return render(request, 'upload_image.html', {'form': form})
