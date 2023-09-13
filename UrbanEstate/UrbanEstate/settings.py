@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'UrbanEstate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ourdb',
+        'NAME': 'alxproject',
         'USER': 'root',
-        'PASSWORD': 'innovative77',
+        'PASSWORD': 'thisistheend@647#0_t',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }

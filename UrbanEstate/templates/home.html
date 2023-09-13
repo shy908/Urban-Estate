@@ -1,13 +1,168 @@
+
+<header>
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Estate | Home{% endblock %}
 
 {% block content %}
+</header>
+<style>
+    header {
+        background-color:#A19487;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color:#F4F2F1;
+    }
+    .page-title {
+        color:#030707;
+        background-color: #E9E6E1;    
+    }
+    body {
+        background-color:#F4F2F1 ;
+    }
+    h{
+        color:#A19487;
+    }
+    h1{
+        color:#A19487;
+    }
+    h2{
+        color:#A19487;
+    }
+    h3{
+        color:#A19487;
+    }
+    .one {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #F4F2F1;
+        height: 300px; /* only for demonstration, should be removed */
+    }
+    .two {
+        float: right;
+        padding: 20px;
+        width: 70%;
+        background-color: #F4F2F1;
+        height: 300px; /* only for demonstration, should be removed */
+    }
+    .three {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #F4F2F1;
+        height: 300px; /* only for demonstration, should be removed */
+    }
+    section::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    footer {
+        background-color:#E9E6E1;
+        padding: 10px;
+        text-align: center;
+        color:#030707;
+        }
+</style>
+<body>
 
 <div class="content">
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Solutions to your designs.</h1>
     {% if user.is_authenticated %}
     <p><span class="welcome-message">Welcome, <strong>{{ user.username }}</strong>!</span></p>  
     {% endif %}     
 </div>
+<div class="cover-image">
+    <img scr ="static/admin/img/lpimagee.jpeg" alt"">
+</div>
+<section>
+    <article class="one">
+<div class="feature 1">
+    <h1>What we can do for you</h1>
+    <img src="static/admin/img/conversationpits.jpeg" alt"">
+    <p class="fp1" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Every project benefits from the richness of knowledge and creativity that our team of seasoned interior designers delivers. 
+        We've worked on a variety of projects, including cosy apartments, roomy homes, and commercial buildings. This knowledge enables us to successfully address a variety of design issues.
+    </p>
+</div>
+</article>
+<article class="two">
+<div class="feature 2">
+    <h2>Ask a Designer</h2>
+    <img src="static/admin/img/consultancy.jpeg" alt"">
+    <p class="fp2" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Working with a qualified house designer from the convenience of your home is made possible by our online house design consultation service. 
+        This is how it goes:
+
+Simple Scheduling: To begin with, you can choose the best time for you to arrange a consultation session. 
+To fit your busy lifestyle, we provide various scheduling alternatives.
+
+Virtual Meetings: After scheduling an appointment, you'll have a safe online meeting with one of our knowledgeable house designers. 
+Depending on your preference, you could also accomplish this over email or chat, which allows for face-to-face communication.
+
+Discuss Your Vision: You will get the chance to talk about your home's vision during the consultation. 
+You are welcome to express your thoughts, preferences, and any particular needs you may have. The designer will pay close attention to you in order to comprehend your objectives and preferred aesthetics.
+
+Expert Advice: Our designers are professionals in their fields and will offer you advice and recommendations. 
+They can aid in the development of your concepts, provide helpful advice, and present innovative approaches to design difficulties.
+
+Visual Aids: Our designers can offer mood boards, sketches, 3D renderings, and other visual aids to help you visualise the design concepts. 
+This will help you get a good idea of how your area might appear once the design process is finished.
+    </p>
+</div>
+</article>
+<article class="three">
+<div class="feature 3">
+    <aside>
+    <h3>Share your thoughts</h3>
+    <img src="static/admin/img/chat.jpeg" alt" ">
+    <p class="fp2" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        This new feature has us quite excited. 
+        It's intended to make it simpler for you to offer comments, advice, or any other ideas you might have on our service. 
+    </p>
+</div>
+</article>
+</section>
+<div class="aboutsection" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    <h style="font-size:xx-large;">About</h>
+    <br>
+    <ins style="color:#030707">Title:"Designing Dreams: My Journey into Interior Design Blogging"</ins>
+    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        As I started my journey at Holberton School in the early spring of 2022, I discovered that I was in the middle of a hard but very gratifying coding bootcamp. 
+        The coursework was rigorous, and the coding assignments were really difficult. 
+        A spark of inspiration, however, burned within me amid all the lines of code and debugging sessions, inspiring me to create my interior design blog website project.
+        <br>
+        I've always had a sharp eye for design and aesthetics.
+        I began to wonder how I could mix my love of interior design with my newfound coding talents as the months at Holberton passed. 
+        I came to the conclusion that starting an interior design blog website would be the ideal platform for me to showcase my creativity and impart knowledge to others.
+        The project's schedule took form. I spent my weekends and evenings polishing my web programming abilities, researching content management systems, and experimenting with various design styles. 
+        I drew out my blog's design, including the layout, colour scheme, and even the logo that would stand in for my brand, slowly but surely.
+        I also got in touch with other of my Holberton School classmates who were enthusiastic about web design and development. 
+        We came together as a tight-knit group and started this creative project. We were aware that this project would be both a showcase for our developing skills and a way for us to express ourselves personally in terms of design.
+        We worked closely together throughout the whole development process, utilising the distinct talents of each team member.
+        We put forth a lot of effort to make sure that the blog accurately represented our passion for interior design in every way, including the frontend and backend coding and content curation.
+        <hr>
+    </body>
+        <footer>Please visit our website, <b style="color:#030707">Urban Estate.com</b>, if you're interested in learning more about the project or discovering the world of interior design.
+        <br>
+        <br>
+        Additionally, you may follow our team on Twitter, GitHub, and LinkedIn:
+<br>
+Our LinkedIn: Phillip Chibaya,  Shylet Manuel , Caroline Chamboko
+<br>
+Our GitHub:  phillipchibaya, shy908, CarolineVimbai
+<br>
+Our Twitter: Phillipchibaya, Shylet Manuel, clineaamanda
+<br>
+<br>
+I appreciate you coming along on this adventure with me, and I hope you find creativity and inspiration inside the pages of our interior design blog website. 
+Visit our GitHub repository here: <b style="color:#030707">Urban-Estate</b> Repository to get an inside peek at the project's progress.
+<hr>
+<i style="color:#030707;">Designing Dreams is more than simply a blog; it's an example of how one may combine their passions with newly acquired abilities and knowledge.</i>
+    </p>
+</div>
+</footer>
 {% endblock %}

@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
 from django.conf import settings
+from django import forms
+from .models import UploadMedia
 
 
 def media_upload_path(instance, filename):
@@ -74,3 +76,8 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+    class MyImageForm(forms.ModelForm):
+        class Meta:
+            model = UploadMedia
+            fields = ('image',)
