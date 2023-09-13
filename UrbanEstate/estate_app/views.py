@@ -16,7 +16,6 @@ from django.urls import reverse
 from django.conf import settings
 import os
 from django.db.models import Q
-from .forms import MyImageForm
 
 # Create your views here.
 def home(request):
